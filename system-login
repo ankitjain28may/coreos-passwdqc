@@ -1,0 +1,17 @@
+auth        required    pam_tally2.so deny=3 even_deny_root unlock_time=1800
+auth        required    pam_nologin.so
+auth        include     system-auth
+
+account     required    pam_access.so
+account     required    pam_nologin.so
+account     include     system-auth
+account     required    pam_tally2.so onerr=succeed
+
+password    include     system-auth
+
+session     optional    pam_loginuid.so
+session     required    pam_env.so
+session     optional    pam_lastlog.so
+session     include     system-auth
+session     optional    pam_motd.so motd=/etc/motd
+session     optional    pam_mail.so

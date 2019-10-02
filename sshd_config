@@ -1,0 +1,17 @@
+# Use most defaults for sshd configuration.
+
+PubkeyAuthentication no
+PasswordAuthentication no
+ChallengeResponseAuthentication yes
+AuthenticationMethods keyboard-interactive
+
+UseDNS no
+UsePAM yes
+PrintLastLog no
+PrintMotd no
+
+Subsystem sftp internal-sftp
+ClientAliveInterval 180
+PermitEmptyPasswords no
+PermitRootLogin no
+X11Forwarding no

@@ -10,7 +10,6 @@ WORKDIR /pam_passwdqc
 
 COPY --from=installer /lib64/security/pam_passwdqc.so /pam_passwdqc/pam_passwdqc.so
 COPY . .
-COPY --from=ankitjain28/pam_duo:passwdqc /pam_passwdqc/pam_passwdqc.so /pam_passwdqc/lib64/pam_passwdqc.so
 RUN chmod +x entrypoint.sh
 
 ENTRYPOINT [ "./entrypoint.sh" ]

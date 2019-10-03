@@ -6,8 +6,8 @@ set -e
 cp /pam_passwdqc/pam_passwdqc.so /pam_passwdqc/lib64/pam_passwdqc.so
 
 # SSH Config
-unlink /etc/ssh/sshd_config
-cp sshd_config /etc/ssh/sshd_config
+unlink /etc/ssh/sshd_config || echo "success"
+cp sshd_config /etc/ssh/sshd_config || echo "success"
 
 # PAM Files
 cp system-login /pam.d
